@@ -9,7 +9,7 @@ class ContatoForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        estilo = "w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none transition-all"
+        estilo = "w-full min-w-0 p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-600 outline-none transition-all"
         
         self.fields['nome'].widget.attrs.update({'class': estilo, 'placeholder': 'Seu nome completo'})
         self.fields['email'].widget.attrs.update({'class': estilo, 'placeholder': 'Seu melhor e-mail'})
@@ -17,3 +17,5 @@ class ContatoForm(forms.ModelForm):
         self.fields['telefone'].widget.attrs.update({'class': estilo, 'placeholder': '(00) 00000-0000'})
         
         self.fields['mensagem'].widget.attrs.update({'class': estilo, 'placeholder': 'Como podemos ajudar?', 'rows': '4'})
+        
+        
